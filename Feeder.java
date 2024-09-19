@@ -1,5 +1,18 @@
 
-public class Feeder {
+public class Feeder 
+{
+
+    public int getCurrentFood()
+    {
+        return currentfood;
+    }
+
+    public Feeder(int c)
+    {
+        currentFood = c;
+    }
+
+    public Feeder() {}
 
     /**
      * The amount of food, in grams, currently in the bird feeder; initialized
