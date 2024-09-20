@@ -2,9 +2,11 @@
 public class Feeder 
 {
 
-    public int getCurrentFood()
+    private int currentFood;
+
+    public Feeder() 
     {
-        return currentfood;
+        currentFood = 0;
     }
 
     public Feeder(int c)
@@ -12,20 +14,32 @@ public class Feeder
         currentFood = c;
     }
 
-    public Feeder() {}
-
-    /**
-     * The amount of food, in grams, currently in the bird feeder; initialized
-     * in the constructor and always greater than or equal to zero
-     */
-    private int currentFood;
+    public int getCurrentFood()
+    {
+        return currentFood;
+    }
 
     /**
      * Simulates one day with numBirds birds or possibly a bear at the bird
      * feeder, as described in part (a) Precondition: numBirds > 0
      */
-    public void simulateOneDay(int numBirds)
+    public void simulateOneDay(int numBirds) 
     {
+        if (Math.random() < 0.05) 
+        {
+            // 5% chance of bear attack
+            currentFood = 0;
+        } 
+        else 
+        {
+            // Birds eat randomly between 10 and 50 grams each
+            int eaten = (int) (Math.random() * 41) + 10; // Random number between 10 and 50
+            currentFood -= eaten * numBirds; // Total food eaten
+            if (currentFood < 0) 
+            {
+                currentFood = 0;
+            }
+        }
     }
 
     /**
