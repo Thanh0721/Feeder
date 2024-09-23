@@ -6,10 +6,10 @@ public class Main
         System.out.println(f);
     
         Feeder g = new Feeder(500);
-        System.out.println("Initial food in g: " + g.getCurrentFood());
+        System.out.println("Initial food in grams: " + g.getCurrentFood());
         
         g.simulateOneDay(12);
-        System.out.println("Food after one day: " + g.getCurrentFood());
+        System.out.println("Food after one day: " + g.getCurrentFood() + " grams");
         
         // Simulate many days with birds and display the result
         int daysWithFood = g.simulateManyDays(12, 10);
@@ -20,7 +20,6 @@ public class Main
         h.simulateOneDay(22);
         System.out.println(h.getCurrentFood());
 
-        // Test the toString method explicitly
         Feeder i = new Feeder(100);
         i.simulateOneDay(5);
         System.out.println(i);
